@@ -12,13 +12,13 @@ class Game
     play
   end
 
-  def play; end
-
-  def round
-    players.each(&:take_turn)
+  def play
+    board.update(player)
   end
 
-  def winner?; end
-
-  def draw?; end
+  def round
+    players.each do |player|
+      board.update(player)
+    end
+  end
 end
